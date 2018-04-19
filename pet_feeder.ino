@@ -2,6 +2,7 @@
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
 #include <Servo.h>
+#include <time.h>
 //for wifi and blynk
 char auth[] = "595c0a3da8714c898b9d6be1fcdaa44e"; //auth for blynk
 const char* ssid = "COMPRO";
@@ -15,6 +16,10 @@ const int ldrPin = A0;
 Servo servo_1; // black for food D8
 Servo servo_2; //blue for snack D10
 int degree=0;
+
+//for time
+int timezone = 7 * 3600; //TimeZone
+int dst = 0; //Date Swing Time
 
 //function
 void food_autometic();
@@ -101,6 +106,10 @@ void setup() {
   //for ldr - led
   pinMode(ledPin, OUTPUT);
   pinMode(ldrPin, INPUT);
+  
+  //for time
+  Serial.setDebugOutput(true);
+  configTime(timezone, dst, "pool.ntp.org", "time.nist.gov"); //ดึงเวลาจาก Server
 }
 
 //blynk input
@@ -153,5 +162,15 @@ void loop(){
   }
   else {
     digitalWrite(ledPin, LOW);
+  }
+
+  //time
+  time_t now = time(nullptr);
+  struct tm* p_tm = localtime(&now);
+  if((p_tm->tm_sec == 0)&&(p_tm->tm_min == 57)&&(p_tm->tm_hour == 11)){
+    food_autometic();
+  }
+  if ((p_tm->tm_sec == 0)&&(p_tm->tm_min == 57)&&(p_tm->tm_hour == 11) && (p_tm->tm_wday == 4)){ //notification to phone (Sunday = 0)
+    Blynk.notify("Check Your Feeder Matchine");
   }
 }
