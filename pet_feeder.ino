@@ -1,8 +1,8 @@
-#define BLYNK_PRINT Serial
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
 #include <Servo.h>
 #include <time.h>
+#define BLYNK_PRINT Serial
 //for wifi and blynk
 char auth[] = "595c0a3da8714c898b9d6be1fcdaa44e"; //auth for blynk
 const char* ssid = "COMPRO";
@@ -19,7 +19,7 @@ int degree=0;
 
 //for time
 int timezone = 7 * 3600; //TimeZone
-int dst = 0; //Date Swing Time
+int dst = 0; //Daylight Saving Time
 
 //function
 void food_autometic();
@@ -42,13 +42,13 @@ void food_autometic(){ // control servo 0 degree to 180 degree
   }
 }
 
-void food_open(){
+void food_open(){ //control servo open
   for(degree = 0;degree <180; degree +=1){
     servo_1.write(degree);
   }
 }
 
-void food_close(){
+void food_close(){ //control servo close
   for(degree = 180; degree >=1; degree -= 1)
   {
     servo_1.write(degree);
@@ -67,13 +67,13 @@ void snack_autometic(){ // control servo 0 degree to 180 degree
   }
 }
 
-void snack_open(){
+void snack_open(){ //control servo open
   for(degree = 0;degree <180; degree +=1){
     servo_2.write(degree);
   }
 }
 
-void snack_close(){
+void snack_close(){ //control servo close
   for(degree = 180; degree >=1; degree -= 1)
   {
     servo_2.write(degree);
@@ -85,7 +85,7 @@ void setup() {
 
   Serial.begin(115200);
   delay(10);
-//   Connect to Wi-Fi network
+//  Connect to Wi-Fi network
   Serial.println();
   Serial.println();
   Serial.print("Connecting to WIFI... : ");
@@ -97,19 +97,20 @@ void setup() {
   }
   Serial.println("");
   Serial.println("Wi-Fi connected successfully");
+  
 //  start blynk
   Blynk.begin(auth, ssid, password);//for 
 
-//SET PIN
+//  SET PIN
   servo_1.attach(D8); //servo pin 8 food
   servo_2.attach(D10); //serov pin 10 snack
   //for ldr - led
   pinMode(ledPin, OUTPUT);
   pinMode(ldrPin, INPUT);
   
-  //for time
+//for time
   Serial.setDebugOutput(true);
-  configTime(timezone, dst, "pool.ntp.org", "time.nist.gov"); //ดึงเวลาจาก Server
+  configTime(timezone, dst, "pool.ntp.org", "time.nist.gov"); //get time from server
 }
 
 //blynk input
@@ -152,11 +153,10 @@ BLYNK_WRITE(V6){ //autometic snack
 
 void loop(){
   Blynk.run();
-  
-  //for ldr - led
-  int ldrStatus = analogRead(ldrPin); delay(1);
+//for ldr - led
+  int ldrStatus = analogRead(ldrPin); delay(20);
   Serial.print("LDR value : "); Serial.println(ldrStatus); //check light input for if else
-  delay(1500);
+  delay(300);
   if (ldrStatus <25) {
     digitalWrite(ledPin, HIGH);
   }
@@ -164,13 +164,13 @@ void loop(){
     digitalWrite(ledPin, LOW);
   }
 
-  //time
+//time
   time_t now = time(nullptr);
   struct tm* p_tm = localtime(&now);
-  if((p_tm->tm_sec == 0)&&(p_tm->tm_min == 57)&&(p_tm->tm_hour == 11)){
+  if((p_tm->tm_sec == 0)&&(p_tm->tm_min == 51)&&(p_tm->tm_hour == 14)){
     food_autometic();
   }
-  if ((p_tm->tm_sec == 0)&&(p_tm->tm_min == 57)&&(p_tm->tm_hour == 11) && (p_tm->tm_wday == 4)){ //notification to phone (Sunday = 0)
-    Blynk.notify("Check Your Feeder Matchine");
+  if ((p_tm->tm_sec == 0)&&(p_tm->tm_min == 51)&&(p_tm->tm_hour == 14) && (p_tm->tm_wday == 4)){ //(Sunday = 0)
+    Blynk.notify("Check Your Feeder Matchine"); 
   }
 }
