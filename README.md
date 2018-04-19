@@ -37,4 +37,7 @@ Computer Programing Project
 3. Upload code to your board
 ---
 ### Author
+* 60070004 Kunyarat Inta
+* 60070035 Teeraphon Jirachanchai
+* 60070040 Nantasiri Maungthong
 * 60070041 Niti Jirakarnwuttikrai
