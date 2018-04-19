@@ -4,6 +4,10 @@ Servo servo_1; // black for food D8
 Servo servo_2; //blue for snack D10
 int degree=0;
 
+//for ldr -led
+const int ledPin = D9;
+const int ldrPin = A0;
+
 //function
 void food_autometic();
 void food_open();
@@ -16,6 +20,9 @@ void setup() {
   //SET PIN
   servo_1.attach(D8); //servo pin 8 food
   servo_2.attach(D10); //serov pin 10 snack
+  //for ldr - led
+  pinMode(ledPin, OUTPUT);
+  pinMode(ldrPin, INPUT);
 }
 
 void food_autometic(){ // control servo 0 degree to 180 degree
@@ -46,6 +53,17 @@ void food_close(){
 
 void loop() {
   // put your main code here, to run repeatedly:
+  //for ldr - led
+  int ldrStatus = analogRead(ldrPin); delay(1);
+  Serial.print("LDR value : "); Serial.println(ldrStatus); //check light input for if else
+  delay(1500);
+  if (ldrStatus <25) {
+    digitalWrite(ledPin, HIGH);
+  }
+  else {
+    digitalWrite(ledPin, LOW);
+  }
+  
   food_autometic();
   delay(1000);
   food_open();
