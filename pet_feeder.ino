@@ -1,4 +1,10 @@
 #include <Servo.h>
+#include <ESP8266WiFi.h>
+
+//for wifi
+const char* ssid = "COMPRO";
+const char* password = "HelloWorld";
+
 //for servo
 Servo servo_1; // black for food D8
 Servo servo_2; //blue for snack D10
@@ -17,6 +23,19 @@ void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
   delay(10);
+  //   Connect to Wi-Fi network
+  Serial.println();
+  Serial.println();
+  Serial.print("Connecting to WIFI... : ");
+  Serial.println(ssid);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("");
+  Serial.println("Wi-Fi connected successfully");
+  
   //SET PIN
   servo_1.attach(D8); //servo pin 8 food
   servo_2.attach(D10); //serov pin 10 snack
