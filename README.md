@@ -2,7 +2,7 @@
 Computer Programing Project
 ---
 ### Introduction
-> เนื่องจากปัจจุบันผู้คนมีการเลี้ยงสัตว์อย่างหลากหลายชนิด อาทิเช่น แมว สุนัข ปลา กระต่าย ฯลฯ  และอาจจะต้องพบเจอกับปัญหาการให้อาหารสัตว์ โดยเฉพาะเวลาที่ต้องเดินทางไปทำงานหรือไปเที่ยวต่างจังหวัดหรือต่างประเทศ ทำให้เกิดความกังวลเกี่ยวกับการทานอาหารของสัตว์เลี้ยง ซึ่งโดยปกติเจ้าของจะให้อาหารตามเวลาจึงต้องมีการคิดค้นอุปกรณ์เพื่ออำนวยความสะดวกแก่เจ้าของ ผู้พัฒนาเล็งเห็นถึงปัญหานี้จึงได้คิดค้นและจัดทำเครื่องให้อาหารอัตโนมัติโดยสามารถสั่งได้จากมือถือเพื่อให้สามารถให้อาหารได้ทุกที่ทุกเวลา
+> Nowadays, people are feeding a variety of animals, such as cats, dogs, rabbits, etc., and may face the problem of feeding animals. Especially when you have to go to work or go to the provinces or abroad. Cause concerns about eating time of pets. Usually, the owner will feed on time, so the device must be invented to facilitate the owner. Developers recognize this problem and have developed and produced automatic feeding machines that can be ordered from a mobile phone so they can be fed anytime, anywhere.
 ---
 ### Library
 * [Servo library](https://github.com/arduino-libraries/Servo)
