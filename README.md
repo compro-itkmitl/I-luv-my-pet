@@ -42,5 +42,5 @@ Computer Programing Project
 * 60070040 Nantasiri Maungthong
 * 60070041 Niti Jirakarnwuttikrai
 ---
-Faculty of Information Technology
+Faculty of Information Technology <br>
 King Mongkut's Institute of Technology Ladkrabang
