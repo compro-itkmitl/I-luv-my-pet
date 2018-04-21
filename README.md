@@ -36,6 +36,10 @@ Computer Programing Project
 2. Change ssid and password \# It is your ssid and password of your wifi.
 3. Upload code to your board
 ---
+### Assistant Teacher
+* Asst.Prof.Dr. Panwit Tuwanut
+* Asst.Prof.Dr. Kitsuchart Pasupa
+---
 ### Author
 * 60070004 Kunyarat Inta
 * 60070035 Teeraphon Jirachanchai
