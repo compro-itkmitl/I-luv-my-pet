@@ -41,3 +41,6 @@ Computer Programing Project
 * 60070035 Teeraphon Jirachanchai
 * 60070040 Nantasiri Maungthong
 * 60070041 Niti Jirakarnwuttikrai
+---
+Faculty of Information Technology
+King Mongkut's Institute of Technology Ladkrabang
