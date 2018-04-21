@@ -33,12 +33,12 @@ void snack_close();
 void food_autometic(){ // control servo 0 degree to 180 degree
   for(degree = 0;degree <180; degree +=1){
     servo_1.write(degree);
-    delay(5);
+    delay(10);
   }
   for(degree = 180; degree >=1; degree -= 1)
   {
     servo_1.write(degree);
-    delay(5);
+    delay(10);
   }
 }
 
@@ -58,12 +58,12 @@ void food_close(){ //control servo close
 void snack_autometic(){ // control servo 0 degree to 180 degree
   for(degree = 0;degree <180; degree +=1){
     servo_2.write(degree);
-    delay(5);
+    delay(10);
   }
   for(degree = 180; degree >=1; degree -= 1)
   {
     servo_2.write(degree);
-    delay(5);
+    delay(10);
   }
 }
 
