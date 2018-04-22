@@ -30,7 +30,8 @@ Computer Programing Project
    * Second button select OUTPUT as V4 and MODE as SWITCH  \# autometic food
    * Third button select OUTPUT as V5 and MODE as PUSH  \# control value snack
    * Fourth button select OUTPUT as V6 and MODE as SWITCH  \# autometic snack
-5. Add 1 notification
+5. Add 1 notification <br>
+[![blynk.jpg](https://s17.postimg.cc/hmmuh92in/blynk.jpg)](https://postimg.cc/image/ic5mtm323/)
 #### In arduino ide
 1. Change auth token \# You can find your auth token in Blynk app.
 2. Change ssid and password \# It is your ssid and password of your wifi.
