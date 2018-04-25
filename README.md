@@ -34,12 +34,26 @@ Computer Programing Project
 [![blynk.jpg](https://s17.postimg.cc/hmmuh92in/blynk.jpg)](https://postimg.cc/image/ic5mtm323/)
 #### In arduino ide
 1. Change auth token \# You can find your auth token in Blynk app.
-2. Change ssid and password \# It is your ssid and password of your wifi. <br>
-[![config.png](https://s7.postimg.cc/rsxefus8r/config.png)](https://postimg.cc/image/qqn7xb9fb/)
-3. Change your time zone and DST (Dayling Saving Time). <br>
-[![time.jpg](https://s7.postimg.cc/u6t4cgdhn/time.jpg)](https://postimg.cc/image/jjzb715c7/)
-4. Set up day and time to feed your pet autometic and notify to check your feed in machine <br> 
-[![notify.png](https://s7.postimg.cc/r18ilzfd7/notify.png)](https://postimg.cc/image/5223yryiv/)
+2. Change ssid and password \# It is your ssid and password of your wifi.
+``` C
+char auth[] = "595c0a3da8714c898b9d6be1fcdaa44e"; //auth for blynk
+const char* ssid = "COMPRO";
+const char* password = "HelloWorld"; 
+```
+3. Change your time zone and DST (Dayling Saving Time).
+``` C
+int timezone = 7 * 3600; //TimeZone
+int dst = 0; //Daylight Saving Time
+```
+4. Set up day and time to feed your pet autometic and notify to check your feed in machine
+``` C
+if((p_tm->tm_sec == 0)&&(p_tm->tm_min == 51)&&(p_tm->tm_hour == 14)){
+    food_autometic();
+  }
+  if ((p_tm->tm_sec == 0)&&(p_tm->tm_min == 51)&&(p_tm->tm_hour == 14) && (p_tm->tm_wday == 4)){ //(Sunday = 0)
+    Blynk.notify("Check Your Feeder Matchine"); 
+  }
+```
 5. Upload code to your board
 ---
 ### Assistant Teacher
