@@ -36,7 +36,11 @@ Computer Programing Project
 1. Change auth token \# You can find your auth token in Blynk app.
 2. Change ssid and password \# It is your ssid and password of your wifi. <br>
 [![config.png](https://s7.postimg.cc/rsxefus8r/config.png)](https://postimg.cc/image/qqn7xb9fb/)
-3. Upload code to your board
+3. Change your time zone and DST (Dayling Saving Time). <br>
+[![time.jpg](https://s7.postimg.cc/u6t4cgdhn/time.jpg)](https://postimg.cc/image/jjzb715c7/)
+4. Set up day and time to feed your pet autometic and notify to check your feed in machine <br> 
+[![notify.png](https://s7.postimg.cc/r18ilzfd7/notify.png)](https://postimg.cc/image/5223yryiv/)
+5. Upload code to your board
 ---
 ### Assistant Teacher
 |Asst.Prof.Dr. Panwit Tuwanut|Asst.Prof.Dr. Kitsuchart Pasupa|
