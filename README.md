@@ -39,8 +39,10 @@ Computer Programing Project
 3. Upload code to your board
 ---
 ### Assistant Teacher
-* Asst.Prof.Dr. Panwit Tuwanut
-* Asst.Prof.Dr. Kitsuchart Pasupa
+|Asst.Prof.Dr. Panwit Tuwanut|Asst.Prof.Dr. Kitsuchart Pasupa|
+|:-:|:-:|
+|[![Asst_Profressor_Panwit_Tuwanut.jpg](https://s7.postimg.cc/7ljyo3cx7/Asst_Profressor_Panwit_Tuwanut.jpg)](https://postimg.cc/image/66idzdbtz/)|[![Asst_Profressor_Kitsuchart_Pasupa.jpg](https://s7.postimg.cc/sv7kywix7/Asst_Profressor_Kitsuchart_Pasupa.jpg)](https://postimg.cc/image/5gzlmz0zr/)|
+
 ---
 ### Author
 * 60070004 Kunyarat Inta
