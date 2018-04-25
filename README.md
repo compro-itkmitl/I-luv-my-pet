@@ -34,7 +34,8 @@ Computer Programing Project
 [![blynk.jpg](https://s17.postimg.cc/hmmuh92in/blynk.jpg)](https://postimg.cc/image/ic5mtm323/)
 #### In arduino ide
 1. Change auth token \# You can find your auth token in Blynk app.
-2. Change ssid and password \# It is your ssid and password of your wifi.
+2. Change ssid and password \# It is your ssid and password of your wifi. <br>
+[![config.png](https://s7.postimg.cc/rsxefus8r/config.png)](https://postimg.cc/image/qqn7xb9fb/)
 3. Upload code to your board
 ---
 ### Assistant Teacher
